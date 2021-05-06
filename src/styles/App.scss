@@ -1,0 +1,115 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+main {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem;
+    text-align: center;
+    color: $primaryColor;
+    h2 {
+      text-align: center;
+      width: 100%;
+      @include laptop {
+        text-align: left;
+        width: auto;
+      }
+    }
+    a {
+      color: $primaryColor;
+      display: none;
+      &:hover, &:active {
+        text-decoration: none;
+        color: lighten($primaryColor, $amount: 7);
+      }
+      @include laptop {
+        display: block;
+      }
+    }
+  }
+  .searchBar {
+    margin: auto;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 1.2rem;
+    color: $secondaryColor;
+    form {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      margin: auto;
+    }
+    input {
+      width: 80%;
+      margin: .3em;
+      padding: .3em;
+      border: none;
+      border-radius: .3em;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .bottom {
+    h5 {text-align: center;}
+    .filters {
+      padding: 1.5rem;
+      max-width: max-content;
+    }
+    .right {
+      width: 100%;
+      min-height: 18rem;
+      max-height: 28rem;
+      padding-bottom: 45px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: whitesmoke;
+        /* width */
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $secondaryColor;
+        border-radius: 5px;
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: lighten($secondaryColor, $amount: 7);
+      }
+    }
+    .restaurantList {
+      padding: 0rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      padding-bottom: 15px;
+    }
+    @include laptop {
+      display: flex;
+      .filters{
+        flex: 1;
+      }
+      .restaurantList {
+        flex: 5;
+      }
+    }
+  }
+}
+
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: loading-logo-spin infinite 20s linear;
+//   }
+// }
+
+// @keyframes loading-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

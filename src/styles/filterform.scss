@@ -1,0 +1,30 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.filterForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include laptop {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    font-size: .8rem;
+    input {
+        margin: .3em;
+        
+    }
+    .form-control {
+        font-size: .8rem;
+        max-width: 7rem;
+        @include laptop {
+            width: 10rem;
+            max-width: 100%;
+        }
+    }
+    label {
+        display: flex;
+        justify-content: space-between;
+        padding: 7.5px;
+    }
+}

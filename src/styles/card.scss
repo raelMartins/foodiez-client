@@ -1,0 +1,42 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.r-card {
+    background-color: white;
+    margin: .2em;
+    font-size: .8em;
+    padding: .4em;
+    // height: 10rem;
+    .name {
+        margin: .2em 0em;
+        text-align: left;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .location {
+        margin: .15em 0em;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    a {
+        color: $primaryColor;
+        &:hover, &:focus {
+            color: $primaryColor;
+            text-decoration: none;
+        }
+    }
+}
+button {
+    border: none;
+    padding: 4px 15px;
+    color: darkred;
+    margin-bottom: 10px;
+}
+p {
+    margin: .5em 0em;
+}
